@@ -1,9 +1,0 @@
-{
-  "name": "drawing-tool",
-  "description": "Collaborative drawing canvas",
-  "author": "Code-and.Coffee",
-  "dependencies": {
-    "express": "^4.10.2",
-    "socket.io": "x"
-  }
-}
