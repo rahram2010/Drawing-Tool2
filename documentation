@@ -1,0 +1,19 @@
+# Running VNTRSeek
+
+Login into scc 
+`$ ssh [username]@scc2.bu.edu`
+Go into the vntr seek project within scc
+`$ cd /project/vntrseek/`
+Go into the folder within 'vntrseek' where your data is 
+`$ cd [yourfoldername]`
+Modify vntr.sh to specify your job by first editing vntr.sh
+`$ nano vntr.sh` 
+Documentation for VNTR seek can be found here: http://orca.bu.edu/vntrseek/manual.php 
+Reload vntr.sh to include your recent changes
+`$ sh vntr.sh`
+Now you need to load your necessary tools before running your job (you are most likely using samtools and seqtk)
+`$ module load samtools seqtk [other_tool]`
+Submitting the job 
+`$ qsub -P [project_name] -N [name_of_job] -M [email] -m e -pe omp [processes_needed] -l h_rt=[hours_needed_for_job] vntr.sh`
+To check status of job
+`$ qstat -u [username]`
